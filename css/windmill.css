@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+
+.windmill,
+.windmill * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+.windmill {
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.windmill::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+}
+.windmill>.windmill-top,
+.windmill>.windmill-right,
+.windmill>.windmill-bottom,
+.windmill>.windmill-left {
+    width: 30%; /*60*/
+    height: 50%;  /*110*/
+    position: absolute;
+    left: 20%; /*50*/
+    top: 0;
+    border-radius: 45% 45% 0 0;
+}
+.windmill>.windmill-top {
+    background-color: #239f85;
+    transform-origin: right bottom;
+    transform: rotate(45deg);
+}
+.windmill>.windmill-right {
+    background-color: #30ad63;
+    transform-origin: right bottom;
+    transform: rotate(135deg);
+}
+.windmill>.windmill-bottom {
+    background-color: #be3a31;
+    transform-origin: right bottom;
+    transform: rotate(225deg);
+}
+.windmill>.windmill-left {
+    background-color: #f19b2c;
+    transform-origin: right bottom;
+    transform: rotate(315deg);
+}
+.windmill>.windmill-top::after,
+.windmill>.windmill-right::after,
+.windmill>.windmill-bottom::after,
+.windmill>.windmill-left::after {
+    content: '';
+    border: 55px solid;
+    width: 0;
+    height: 0;
+    right: 0;
+    position: absolute;
+    transform-origin: bottom right;
+    transform: rotate(45deg);
+    border-bottom-left-radius: 45%;
+}
+.windmill>.windmill-top::after {
+    border-color: #29bb9c;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+.windmill>.windmill-right::after {
+    border-color: #39ca74;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+.windmill>.windmill-bottom::after {
+    border-color: #e54d42;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+.windmill>.windmill-left::after {
+    border-color: #f0c330;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
